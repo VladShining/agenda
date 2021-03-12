@@ -1,0 +1,13 @@
+{
+    "fullname":"RAJAO Narivony",
+    "_id":"1",
+    "date":"12/12/21",
+    "gender":"Male",
+    "objet":{
+        "contenue":"valeur",
+        "autre":"another"
+    },
+    "tableau":["elem1","elem2"],
+    "autrevaleur":false
+
+ }   
