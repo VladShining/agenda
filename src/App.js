@@ -1,8 +1,10 @@
-import Accueil from './pages/Accueil';
+import RouterOutlet from './RouterOutlet';
 
 export default function App() {
   return (
-    <Accueil/>
+    <>
+    <RouterOutlet/>
+    </>
   );
 }
 setInterval(App,1000);

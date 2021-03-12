@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Dashboard extends Component {
+export default class Forofor extends Component {
     render() {
         return (
             <div>
-                dashboard
+                404 not found
             </div>
         )
     }

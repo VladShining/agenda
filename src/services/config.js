@@ -1,3 +1,7 @@
+
+//import * as firebase from "firebase/app";
+// import "firebase/auth";
+
 const firebaseConfig = {
     apiKey: "AIzaSyDaL8C6EU2jpNYvS2KDOqYVw-G_HD1MfVE",
     authDomain: "agenda-49.firebaseapp.com",
@@ -6,4 +10,6 @@ const firebaseConfig = {
     messagingSenderId: "933532459792",
     appId: "1:933532459792:web:30a21ba01d91799284bb95"
   };
-firebase.initializeApp(firebaseConfig);
+// const AppConfig = firebase.initializeApp(firebaseConfig);
+// export const auth = AppConfig.auth();
+export default firebaseConfig;
