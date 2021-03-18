@@ -2,16 +2,26 @@ import _ from 'lodash';
 import React,{useState} from 'react';
 import { DragDropContext, Droppable,Draggable } from 'react-beautiful-dnd';
 
-const item = {
+const item = [{
     id:"1",
     name:"first"
-}
+},
+{
+    id:"2",
+    name:"second"
+},{
+    id:"3",
+    name:"third"
+},{
+    id:"4",
+    name:"four"
+}]
 
 function DraggableTest() {
     const [state, setState] = useState({
         "todo":{
             title:"todo",
-            items:[item]
+            items:[...item]
         }
     })
     return (
