@@ -79,46 +79,53 @@ const authListener = () => {
 };
 // eslint-disable-next-line
 useEffect(()=>{    authListener();},[user]);
-
+// let userNow = firebase.auth().currentUser
     return (
         <div className="Auth">
             Authentification
-          {user ?  <button onClick={handleLogout}> signout</button> :<div></div>}
-           {hasAccount ? ( 
-           <div className="SigninContainer">
-           <input type="text"
-             autoFocus
-             required 
-             value={email} 
-             onChange={(e)=>setEmail(e.target.value)}
-           />
-           <p> {emailError}</p>
-           <input type="password"
-             required 
-             value={password} 
-             onChange={(e)=>setPassword(e.target.value)}
-           />
-           <p> {passwordError}</p>
-           <button onClick={handleSignin}>Signin</button>
-       </div>
-           ):(<div className="SignupContainer">
-           <input type="text"
-             autoFocus
-             required 
-             value={email} 
-             onChange={(e)=>setEmail(e.target.value)}
-           />
-           <p> {emailError}</p>
-           <input type="password"
-             required 
-             value={password} 
-             onChange={(e)=>setPassword(e.target.value)}
-           />
-           <p> {passwordError}</p>
-           <button onClick={handleSignUp}>Signup</button>
-       </div>
-           )}
-           <button onClick={()=>setHasAccount(!hasAccount)}>*</button>
+            {user && <div><p>already loged to {user.email} </p> <button onClick={handleLogout}> signout</button></div>}
+
+            {hasAccount ?
+                (<div className="SignupContainer">
+                    <input type="text"
+                        autoFocus
+                        required 
+                        value={email} 
+                        onChange={(e)=>setEmail(e.target.value)}
+                    />
+                    <p> {emailError}</p>
+                    <input type="password"
+                        required 
+                        value={password} 
+                        onChange={(e)=>setPassword(e.target.value)}
+                    />
+                    <input type="password"
+                        required 
+                        value={password} 
+                        onChange={(e)=>setPassword(e.target.value)}
+                    />
+                    <p> {passwordError}</p>
+                    <button onClick={handleSignUp}>Signup</button>
+                </div>
+                ):( 
+                <div className="SigninContainer">
+                    <input type="text"
+                    autoFocus
+                    required 
+                    value={email} 
+                    onChange={(e)=>setEmail(e.target.value)}
+                    />
+                    <p> {emailError}</p>
+                    <input type="password"
+                    required 
+                    value={password} 
+                    onChange={(e)=>setPassword(e.target.value)}
+                    />
+                    <p> {passwordError}</p>
+                    <button onClick={handleSignin}>Signin</button>
+                </div>
+                 )}
+           <button onClick={()=>setHasAccount(!hasAccount)}>switch to sign</button>
        </div>
     )
 }
