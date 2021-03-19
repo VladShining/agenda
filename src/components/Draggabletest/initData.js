@@ -1,14 +1,14 @@
 const initialData= {
     tasks : {
-        'task-1':{id:'_1',content:'NOthing to begin'},
-        'task-2':{id:'_2',content:'next action'},
-        'task-3':{id:'_3',content:'stack'},
-        'task-4':{id:'_4',content:'loremipsumm'},
+        'task-1':{id:'task-1',content:'NOthing to begin'},
+        'task-2':{id:'task-2',content:'next action'},
+        'task-3':{id:'task-3',content:'stack'},
+        'task-4':{id:'task-4',content:'loremipsumm'},
     },
     columns:{
         'column-1':{
             id:'column-1',
-            title:'TOdo',
+            title:'Todo',
             taskIds:['task-1','task-2','task-3','task-4']
         },
     },
