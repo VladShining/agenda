@@ -1,0 +1,31 @@
+$Akronim : 'Akronim';
+$Megrim : 'Megrim';
+$Aunchanted : 'AunchantedXspace';
+$Isocp:'ISOCP2';
+$Isocteur:'ISOCTEUR';
+
+@font-face {
+    font-family: 'Akronim';
+    src: "../fonts/Akronim-Regular.ttf";
+}
+@font-face {
+    font-family: 'Megrim';
+    src: "../fonts/Megrim-Regular.ttf";
+}
+@font-face {
+    font-family: 'AunchantedXspace';
+    src: "../fonts/AunchantedXspace.ttf";
+}
+@font-face {
+    font-family: 'ISOCP2';
+    src: "../fonts/isocp2__.ttf";
+}
+@font-face {
+    font-family: 'ISOCTEUR';
+    src: "../fonts/isocteur.ttf";
+}
+
+$title-text:$Aunchanted;
+$subtitle-text:$Megrim;
+$chapter-text:$Isocp;
+$normal-text:$Akronim;

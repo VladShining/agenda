@@ -1,0 +1,39 @@
+@import 'reset.scss';
+@import 'colors.scss';
+@import 'buttons.scss';
+@import 'fonts.scss';
+@import 'sizes.scss';
+@import 'checkbox.scss';
+
+*{
+    box-sizing: border-box;
+    background:$root-light-background;
+    border-radius: 7px;
+    margin: 0;
+}
+
+h1{
+    font-size: $title-font-size;
+    color:$title-font-color;
+    font-family: $title-text !important;
+}
+h2{
+    font-size: $subtitle-font-size;
+    color:$subtitle-font-color;
+    font-family: $subtitle-text !important;
+}
+h3{
+    font-size: $chapter-font-size;
+    color:$chapter-font-color;
+    font-family: $chapter-text !important;
+}
+p{
+    font-size: $paragraph-font-size;
+    color:$paragraph-font-color;
+    font-family: $normal-text;
+}
+span{
+    font-size: $span-font-size;
+    color:$span-font-color;
+    font-family: $Isocteur;
+}

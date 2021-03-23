@@ -5,6 +5,7 @@ import Profil from './pages/Profil';
 import Forofor from './pages/Forofor';
 import Authentification from './components/Authentification';
 import Calendar from './components/Calendar';
+import Accueil from './pages/Accueil';
 
 export default class RouterOutlet extends Component {
     render() {
@@ -12,9 +13,9 @@ export default class RouterOutlet extends Component {
             <div>
                 <Router>
                     <Switch>
-                        <Route exact path="/" component={Dashboard}/>
+                        <Route path="/" component={Accueil}/>
                         <Route path="/profil" component={Profil}/>
-                        <Route path="/calendar" component={Calendar}/>
+                        {/* <Route path="/calendar" component={Calendar}/> */}
                         <Route path="/auth" component={Authentification}/>
                         <Route component={Forofor}/>
                     </Switch>

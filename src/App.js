@@ -7,7 +7,7 @@ export default function App() {
     <>
     <RouterOutlet/>
     
-     <DraggableTest2/>
+     {/* <DraggableTest2/> */}
     </>
   );
 }

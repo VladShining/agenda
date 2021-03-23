@@ -1,0 +1,45 @@
+// ROOT:
+$root-dark-background: #493649;
+$root-light-background:#e9e9e9;
+
+// Neomorph
+$shadow-gradiant:-.1rem -.1rem .2rem #fff, .1rem .1rem .2rem rgba(0, 0, 0, 0.4);
+$shadow-gradiant-inside: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+$first-grey:#555;
+$second-grey:#777;
+$tertiary-grey:#999;
+$light-grey:#ccc;
+$shining-grey:#eee;
+$dark-grey:#333;
+
+//button
+$button-color:$light-grey;
+$button-hover-color:$dark-grey;
+$button-active-color:white;
+$button-fonts-color:#777;
+$button-fonts-active-color:$shining-grey;
+$button-fonts-hover-color:#000;
+$primary-button-color:red;
+$secondary-button-color:blue;
+$tertiary-button-color:green;
+$disabled-button-color:inherit;
+$disabled-font-color:#fff;
+
+//checkbox radio
+$checkbox-color:$tertiary-grey;
+$checkbox-active-color:$second-grey;
+$checkbox-border-color:$first-grey;
+
+//text title
+$title-font-size:24px;
+$title-font-color:$dark-grey;
+$subtitle-font-size:18px;
+$subtitle-font-color:$dark-grey;
+$chapter-font-size:14px;
+$chapter-font-color:$dark-grey;
+$paragraph-font-size:12px;
+$paragraph-font-color:black;
+$span-font-size:15px;
+$span-font-color:$tertiary-grey;
+
+//
