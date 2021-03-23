@@ -1,10 +1,51 @@
 import React, { Component } from 'react'
-import initialData from './initData';
+import initialData from '../../services/mock/initData';
 import Column from './Column.jsx';
 import { DragDropContext } from 'react-beautiful-dnd';
+import {v4 as uuidv4 } from 'uuid';
 
 class DraggableTest2 extends Component{
     state = initialData;
+    addTask=()=>{
+        var el =document.getElementById('task').value
+        const elID=uuidv4()
+        const newtask = {
+            ...this.state,
+            tasks:{
+            ...this.state.tasks,
+            [elID]:{id:elID,content:el}
+            }
+        }
+        this.setState(newtask)
+        this.state.columns['column-1'].taskIds.push(elID)
+    }
+    removeTask=(id)=>{
+        const elem= this.state.columns
+        const el= Object.values(elem)
+        for(let i=0 ;i<el.length;i++)
+        {
+            el[i].taskIds=el[i].taskIds.filter(ele=>ele!==id)
+            
+        }
+    
+    }
+    addColumn=()=>{
+    
+       var el =document.getElementById('column').value
+       
+       const colID=uuidv4()
+       const newColumn ={
+           ...this.state,
+           columns:{
+            ...this.state.columns,
+            [colID]:{id:colID,title:el,taskIds:[]}
+           }
+        }
+        this.setState(newColumn)
+        this.state.columnOrder.push(colID);
+        
+    }
+    
     onDragStart=()=>{
         document.body.style.transition = 'background-color 0.2s ease';
     }
@@ -15,16 +56,15 @@ class DraggableTest2 extends Component{
     }
     onDragEnd = result =>{
         document.body.style.backgroundColor ='inherite'
-        console.log(result);
+       this.removeTask()
         const {destination,source,draggableId }=result;
-        if(!destination){
+        if(!destination){ 
             return;
         }
         if( destination.droppableId === source.droppableId &&
             destination.index === source.index
-            ){
+        ){ 
                 return;
-
         }
         const start = this.state.columns[source.droppableId];
         const finish = this.state.columns[destination.droppableId];
@@ -72,19 +112,31 @@ class DraggableTest2 extends Component{
     };
     render(){
         return (
+            <>
         <DragDropContext
             onDragStart={this.onDragStart}
             onDragUpdate={this.onDragUpdate}
             onDragEnd={this.onDragEnd}
         >
-       { this.state.columnOrder.map(columnId => {
+            {this.state.columnOrder.map(columnId => {
             const column = this.state.columns[columnId];
             const tasks=column.taskIds.map(taskId => this.state.tasks[taskId]);
-
-            return (<Column key={column.id} column={column} tasks={tasks} /> );
-           
+            return (<Column key={column.id} column={column} tasks={tasks} delete={this.removeTask.bind(this)}/> );
         })}
-         </DragDropContext>
+        </DragDropContext>
+        <div>
+                <input type='text' id='task' />
+                <button onClick={this.addTask} >
+                    Ajout Tache 
+                </button>
+                <input type='text' id='column' />
+                <button onClick={this.addColumn} >
+                    Nouveau Colonne 
+                </button>
+        </div>
+        {/* <Controle etat={this.state}/> */}
+        {/* mila remontena ny etat vo mety io ↑ */}
+        </>
             );
     }
 }

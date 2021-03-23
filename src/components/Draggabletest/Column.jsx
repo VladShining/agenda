@@ -4,13 +4,20 @@ import Task from './Task'
 import styled from'styled-components';
 
 const Container = styled.div`
-    background-color:${props => (props.isDraggingOver ?'skyblue': 'red')};
+background-color:${props => (props.isDraggingOver ?'skyblue': 'red')};
+
 `;
 const Title = styled.div`
     font-size:40px;
     color:red;
 `;
 export default class Column extends Component {
+  
+  displaynone=()=>{
+    if(this.props.column.id==='remove'){
+        // console.log(document.getRootNode())
+    }
+  }
   
        render() {
         return (
@@ -19,14 +26,15 @@ export default class Column extends Component {
             {this.props.column.title}
             </Title>
             <Droppable droppableId={this.props.column.id}>
-            {(provided,snapshot)=>(
+                {(provided,snapshot)=>(
                 <Container ref={provided.innerRef} 
                     {...provided.droppableProps} 
-                    isDraggingOver={snapshot.isDraggingOver}                
-                >
-                     
+                    isDraggingOver={snapshot.isDraggingOver} 
+                   
+                >    
+                    {(this.props.column.id==='remove')&&this.displaynone()}
                     {this.props.tasks.map((task,index) => (
-                    <Task key={task.id} task={task} index={index} />
+                    <Task key={task.id} task={task} index={index} delete={this.props.delete} />
                 ))
                     }
                     {provided.placeholder}

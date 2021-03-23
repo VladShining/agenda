@@ -1,12 +1,12 @@
 import DraggableTest2 from './components/Draggabletest/DraggableTest2';
 
-// import RouterOutlet from './RouterOutlet';
+import RouterOutlet from './RouterOutlet';
 
 export default function App() {
   return (
     <>
-    {/* <RouterOutlet/>
-     */}
+    <RouterOutlet/>
+    
      <DraggableTest2/>
     </>
   );
