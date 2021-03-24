@@ -1,26 +1,31 @@
 import React from 'react';
 import '../styles/Accueil.scss';
-import Header from './shared/Header';
 
+let ouvert = false;
 function openNav(){
     const element = document.getElementsByClassName("nav");
     for (let i=0 ;i<element.length; i++){
-    if(element[i].classList.contains("small"))
         element[i].classList.remove("small");
-    else
-        element[i].classList.add("small");
 }
+ouvert=true;
+}
+function toogleNav(){
+  const e = document.getElementsByClassName("nav");
+  
+  if(ouvert){
+    for (let i=0 ;i<e.length; i++) e[i].classList.add("small");
+  }else{
+    for (let i=0 ;i<e.length; i++) e[i].classList.remove("small");
+  }
+  ouvert=!ouvert
 }
 function handleChange(){
   console.log ();
 }
 export default function Accueil (){
     return <> 
-        {/* <Header/> */}
-        {/* <Auth/> */}
-        {/* <h1>hello 👋 </h1> */}
-        <div className="container">
-        <div id="navMenu" className="diamond" onClick={openNav}>
+        <div className="container" onClick={toogleNav} onMouseEnter={openNav}>
+        <div id="navMenu" className="diamond">
           <div id="mainRotCorrect" className="rotCorrect">👋</div>
         </div>
         <div id="nav1" className="nav nav1 diamond small">
@@ -30,7 +35,7 @@ export default function Accueil (){
           <div className="rotCorrect">💬</div>
         </div>
         <div id="nav3" className="nav nav3 diamond small">
-          <div className="rotCorrect" onMouseEnter={handleChange}>🏠</div>
+          <div className="rotCorrect" onMouseOver={handleChange}>🏠</div>
         </div>
         <div id="nav4" className="nav nav4 diamond small">
           <div className="rotCorrect">🗓️</div>
