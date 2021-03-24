@@ -8,6 +8,7 @@ class DraggableTest2 extends Component{
     state = initialData;
     addTask=()=>{
         var el =document.getElementById('task').value
+        if(el){
         const elID=uuidv4()
         const newtask = {
             ...this.state,
@@ -18,6 +19,7 @@ class DraggableTest2 extends Component{
         }
         this.setState(newtask)
         this.state.columns['column-1'].taskIds.push(elID)
+        }
     }
     removeTask=(id)=>{
         const elem= this.state.columns
@@ -32,7 +34,7 @@ class DraggableTest2 extends Component{
     addColumn=()=>{
     
        var el =document.getElementById('column').value
-       
+       if(el){
        const colID=uuidv4()
        const newColumn ={
            ...this.state,
@@ -43,7 +45,7 @@ class DraggableTest2 extends Component{
         }
         this.setState(newColumn)
         this.state.columnOrder.push(colID);
-        
+         }
     }
     
     onDragStart=()=>{
@@ -110,6 +112,21 @@ class DraggableTest2 extends Component{
         };
         this.setState(newState);
     };
+    componentDidMount() {
+       this.load = setInterval(
+          () => this.tick(),
+          100
+        );
+    }
+    
+    componentWillUnmount() {
+        clearInterval(this.load);
+    }
+    
+    tick() {
+        this.setState(this.state);
+    }
+
     render(){
         return (
             <>
@@ -125,11 +142,11 @@ class DraggableTest2 extends Component{
         })}
         </DragDropContext>
         <div>
-                <input type='text' id='task' />
+                <input type='text' id='task' required/>
                 <button onClick={this.addTask} >
                     Ajout Tache 
                 </button>
-                <input type='text' id='column' />
+                <input type='text' id='column' required/>
                 <button onClick={this.addColumn} >
                     Nouveau Colonne 
                 </button>

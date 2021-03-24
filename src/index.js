@@ -6,15 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import firebase from "firebase/app";
 import firebaseConfig from './services/config';
 // eslint-disable-next-line
-const Main = () => {
+// const Main = () => {
     ReactDOM.render(
       <React.StrictMode>
         <App/>
       </React.StrictMode>,
       document.getElementById('root')
     );
- }
+//  }
 firebase.initializeApp(firebaseConfig);
-setInterval(Main,100);
+// setInterval(Main,100);
 reportWebVitals();
- 
