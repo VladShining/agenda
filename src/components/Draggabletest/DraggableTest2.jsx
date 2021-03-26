@@ -58,7 +58,7 @@ class DraggableTest2 extends Component{
     }
     onDragEnd = result =>{
         document.body.style.backgroundColor ='inherite'
-       this.removeTask()
+    //    this.removeTask()   tsy fantatra mazava
         const {destination,source,draggableId }=result;
         if(!destination){ 
             return;
@@ -143,7 +143,7 @@ class DraggableTest2 extends Component{
         </DragDropContext>
         <div>
                 <input type='text' id='task' required/>
-                <button onClick={this.addTask} >
+                <button onClick={this.addTask} id="detect">
                     Ajout Tache 
                 </button>
                 <input type='text' id='column' required/>

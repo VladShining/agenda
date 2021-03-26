@@ -7,4 +7,3 @@ export default function App() {
     </>
   );
 }
-// setInterval(App,1000);

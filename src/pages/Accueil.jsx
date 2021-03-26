@@ -26,7 +26,7 @@ export default function Accueil (){
     return <> 
         <div className="container" onClick={toogleNav} onMouseEnter={openNav}>
         <div id="navMenu" className="diamond">
-          <div id="mainRotCorrect" className="rotCorrect">👋</div>
+          <div id="mainRotCorrect" className="rotCorrect">👋🏻</div>
         </div>
         <div id="nav1" className="nav nav1 diamond small">
           <div className="rotCorrect">⏰</div>

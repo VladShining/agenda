@@ -2,7 +2,7 @@ import React from 'react';
 import Clock from '../../components/Clock';
 import firebase from 'firebase';
 import 'firebase/auth';
-import {Link,NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Header = ()=> {
     return (
