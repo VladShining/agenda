@@ -56,9 +56,7 @@ const addTask=()=>{
     data.columns[Object.keys(data.columns)[0]].taskIds.push(elID)
     
 }
-
 }
-
 
 function removeTask(id){
     const elem= data.columns
@@ -87,6 +85,16 @@ const addColumn=()=>{
      data.columnOrder.push(colID);
      
       }
+ }
+ function removeColumn(id){
+    const colContent = data.columns[id].taskIds
+    
+    if(colContent.length!==0)console.log(colContent)
+    else{
+        delete data.columns[id];
+        data.columnOrder=data.columnOrder.filter(ele=>ele!==id)
+        change(data)
+    };
  }
  const onDragEnd = result =>{
     document.body.style.backgroundColor ='inherite'
@@ -163,7 +171,7 @@ const onDragStart=()=>{
                 {data && data.columnOrder.map(columnId =>{
                     const column =data.columns[columnId];
                     const tasks = column.taskIds.map(taskId => data.tasks[taskId]);
-                    return (<Column key={column.id} column={column} tasks={tasks} delete={removeTask}/> );
+                    return (<Column key={column.id} column={column} tasks={tasks} deleteCol={removeColumn} delete={removeTask}/> );
                 })}
 
             </DragDropContext>
