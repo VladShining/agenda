@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>profil</h2>
+    <div *ngIf="editMode">
+        <input id="firstName" placeholder="firstName" #firstName/>
+        <input id="lastName" placeholder="lastName" #lastName/>
+        <button (click)="editMode=false">annuler</button>
+        <button (click)="saveUserConfirmation.open()">save</button>
+    </div>
+    <div *ngIf="!editMode">
+        <p>nom :{{user.firstName}}</p> 
+        <p>prenom :{{user.lastName}}</p>
+        <p>email : {{user.email}}</p>
+        <p>password : {{user.password}}</p>
+        <button (click) = "editUser()">edit</button>
+    </div>
+</div>
+
+<modal #userWelcome >
+  <ng-template #modalHeader>
+    <h3>Confirmation Utilisateur</h3>
+  </ng-template>
+  <ng-template #modalBody>
+    <p>Pour commencer , veuillez compléter votre profil</p>
+    <button (click)="userWelcome.close()">ok</button>
+  </ng-template>
+</modal>
+
+<modal #saveUserConfirmation >
+  <ng-template #modalHeader>
+    <h3 >Confirmation Utilisateur</h3>
+  </ng-template>
+  <ng-template #modalBody>
+    <p >sauver ?</p>
+    <button (click)="saveUserConfirmation.close();editMode=false">Annuler</button>
+    <button (click)="saveUser()">enregistrer</button>
+  </ng-template>
+</modal>
+
+<modal #successSaveUser >
+  <ng-template #modalHeader>
+    <h3>Confirmation Utilisateur</h3>
+  </ng-template>
+  <ng-template #modalBody>
+    <p>utlisateur enregistrer avec succes</p>
+    <button (click)="successSaveUser.close()">ok</button>
+  </ng-template>
+</modal>

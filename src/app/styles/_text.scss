@@ -1,0 +1,40 @@
+h1 {
+  font-size: $title-font-size;
+  color: $title-font-color;
+  font-family: $title-text !important;
+}
+h2 {
+  font-size: $subtitle-font-size;
+  color: $subtitle-font-color;
+  font-family: $subtitle-text !important;
+}
+h3 {
+  font-size: $chapter-font-size;
+  color: $chapter-font-color;
+  font-family: $chapter-text !important;
+}
+h4 {
+  font-size: $paragraph-font-size;
+  color: $paragraph-font-color;
+  font-family: $paragraph-text !important;
+}
+h5 {
+  font-size: $subparagraph-font-size;
+  color: $subparagraph-font-color;
+  font-family: $subparagraph-text !important;
+}
+h6 {
+  font-size: $subsubpara-font-size;
+  color: $subsubpara-font-color;
+  font-family: $subsubpara-text !important;
+}
+p {
+  font-size: $text-font-size;
+  color: $text-font-color;
+  font-family: $normal-text;
+}
+span {
+  font-size: $span-font-size;
+  color: $span-font-color;
+  font-family: $span-text;
+}

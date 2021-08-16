@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="containerForm">
+        <form [formGroup]="signInForm" (ngSubmit)= "onSubmit()" class="form" id="form2">
+            <h2 class="form__title">Authentification</h2>
+            <input type="email" placeholder="e-mail"class="form-control" formControlName="email" id="email"/>
+            <input [type]="input ? 'text' : 'password'" placeholder="Mot de passe" class="form-control" formControlName="password" id="password" />
+            <i (click)="toggleShow()" > show pass </i>
+            <button type="submit" class="btn" [disabled]="signInForm.invalid">Connexion</button>
+            <button type="button"class="btn" id="signUp" [routerLink]="['/auth/signup']" routerLinkActive="router-link-active" >Creer un compte →</button>
+            <p>{{ errorMessages }}</p>
+        </form>
+        <a routerLink="/auth/signup" class="link" (mouseout)="showMe=false" (mouseover)="showMe=true">Mot de passe oubliez ?</a>
+        <p *ngIf="showMe">essayez de souvenir quand même ...</p>
+    </div>
+</div>

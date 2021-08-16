@@ -1,0 +1,61 @@
+// ROOT:
+$root-dark-background: #493649;
+$root-light-background: #e9e9e9;
+
+// Neomorph
+$color-bg: #ebecf0;
+$color-shadow: #babecc;
+$text-shadow: 1px 1px 0 #fff;
+
+$box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px #fff;
+$box-shadow2: -5px -5px 20px #fff, 5px 5px 20px $color-shadow;
+$box-shadow3: -2px -2px 5px #fff, 2px 2px 5px $color-shadow;
+$shadow-gradiant: -0.1rem -0.1rem 0.2rem #fff,
+  0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.4);
+$shadow-gradiant-inside: inset -6px -6px 9px #fff,
+  inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+$first-grey: #555;
+$second-grey: #777;
+$tertiary-grey: #999;
+$light-grey: #ccc;
+$shining-grey: #eee;
+$dark-grey: #333;
+
+//button
+$button-color: $light-grey;
+$button-hover-color: $dark-grey;
+$button-active-color: white;
+$button-fonts-color: #777;
+$button-fonts-active-color: $shining-grey;
+$button-fonts-hover-color: #000;
+$primary-button-color: red;
+$secondary-button-color: blue;
+$tertiary-button-color: green;
+$disabled-button-color: inherit;
+$disabled-font-color: #fff;
+
+//checkbox radio
+$checkbox-color: $tertiary-grey;
+$checkbox-active-color: $second-grey;
+$checkbox-border-color: $first-grey;
+
+//text title
+$title-font-color: $dark-grey;
+$subtitle-font-color: $dark-grey;
+$chapter-font-color: $dark-grey;
+$paragraph-font-color: white;
+$subparagraph-font-color: white;
+$subsubpara-font-color: white;
+$text-font-color: white;
+$span-font-color: $tertiary-grey;
+
+//theme
+$dark: #040609;
+$dark-background: #1a2230;
+$dark-color: #212c3d;
+$font-color: #92abcd;
+$light-background: #e5e5e5;
+$light-color: #f1f1f1;
+$sunny: #ff5e00;
+$ruddy: #ff0028;
+$water: #11ece5;

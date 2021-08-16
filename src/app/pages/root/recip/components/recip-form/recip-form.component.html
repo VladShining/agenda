@@ -1,0 +1,10 @@
+<p>recip-form works!</p>
+<modal #userWelcome >
+    <ng-template #modalHeader>
+      <h3>Confirmation Utilisateur</h3>
+    </ng-template>
+    <ng-template #modalBody>
+      <p>Pour commencer , veuillez compléter votre profil</p>
+      <button (click)="userWelcome.close();">ok</button>
+    </ng-template>
+  </modal>

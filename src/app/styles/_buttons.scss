@@ -1,0 +1,50 @@
+$button-width: 180px;
+$button-height: 40px;
+$font-size-button-label: 1rem;
+
+button {
+  border: none;
+  outline: none;
+  width: $button-width;
+  height: $button-height;
+  font-size: $font-size-button-label;
+  font-family: $Akronim;
+  color: $button-fonts-color;
+  text-transform: uppercase;
+  box-shadow: $shadow-gradiant;
+  background-color: $button-color;
+
+  &:hover {
+    color: $button-fonts-hover-color;
+    cursor: pointer;
+    background-color: $button-hover-color;
+  }
+  &:active {
+    background-color: $button-active-color;
+    color: $button-fonts-active-color;
+    box-shadow: $shadow-gradiant-inside;
+    cursor: progress;
+  }
+  &.primary {
+    background: $primary-button-color;
+  }
+  &.secondary {
+    background: $secondary-button-color;
+  }
+  &.tertiary {
+    background: $tertiary-button-color;
+  }
+  &:disabled {
+    background: $disabled-button-color;
+    color: $disabled-font-color;
+    box-shadow: $shadow-gradiant-inside;
+  }
+}
+%btn {
+  @extend button;
+}
+.circular-btn {
+  @extend %btn;
+  width: $button-height;
+  border-radius: 50%;
+}

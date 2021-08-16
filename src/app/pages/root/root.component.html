@@ -1,0 +1,8 @@
+<div class="container" [@routeAnimations]="prepareRoute(outlet)">
+   <h1>Root</h1> 
+   <input id="val" placeholder="date" #val />  <button (click)="show(val.value)" >log</button>
+   <input id="cleave" placeholder="hh:mm" [(ngModel)]="cleave" /> {{cleave}} 
+   <root-nav ></root-nav>
+   <button (click)="logout()" >logout</button>
+   <router-outlet #outlet="outlet"></router-outlet>
+</div>
